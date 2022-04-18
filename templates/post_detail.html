@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Posts
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>{{post.title}}</h1>
+    <div class="alert alert-info">
+        <p>{{post.description}}</p>
+        <p><b>DATE: {{post.date.date()}}</b></p>
+        <p>Author: {{post.author}}</p>
+        {% if current_user.is_authenticated and current_user.username == post.author %}
+        <a href="/posts/{{post.id}}/update" class="btn btn-warning">Edit</a>
+        <a href="/posts/{{post.id}}/delete" class="btn btn-danger">Delete</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

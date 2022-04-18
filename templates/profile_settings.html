@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ {{current_user.username}}
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+
+
+<div class="tab">
+  <button class="tablinks active" onclick="openTab(event, 'Profile')">Profile</button>
+  <button class="tablinks" onclick="openTab(event, 'ChangePassword')">Change password</button>
+  <button class="tablinks" onclick="openTab(event, 'DeleteAccount')">Delete account</button>
+</div>
+
+<div id="Profile" class="tabcontent">
+  <h3>Profile</h3>
+
+   <div class="input-group">
+  <span class="input-group-text">First and last name</span>
+  <input type="text" aria-label="First name" class="form-control">
+  <input type="text" aria-label="Last name" class="form-control">
+</div>
+
+</div>
+  <div id="ChangePassword" class="tabcontent">
+<div class="container">
+  <h2>Change password</h2>
+  <div class="div-form">
+      <main class="form-signin">
+          <form method="POST">
+              {{form.hidden_tag()}}
+              <div class="form-floating">
+                <input type="text" class="form-control" id="currentPassword" placeholder="Current Password">
+                  <label for="currentPassword">Current Password</label>
+              </div>
+              <div class="form-floating">
+                  {{form.password(type="password", class="form-control", id="floatingPassword", placeholder="New Password")}}
+                  <label for="floatingPassword">New Password</label>
+              </div>
+              {{form.submit(class="w-100 btn btn-lg btn-primary", id="sumbitBtn")}}
+              <script>
+                  var current_user = "{{current_user}}"
+              </script>
+          </form>
+      </main>
+  </div>
+</div>
+
+<div id="message">
+  <h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+<script src="../static/js/user_settings.js"></script>
+<script src="../static/js/user_password.js"></script>
+
+{% endblock %}
