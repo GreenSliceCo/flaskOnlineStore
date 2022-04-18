@@ -92,9 +92,8 @@ def create_post():
     if request.method == "POST":
         title = request.form["title"]
         description = request.form["description"]
-        price = request.form["price"]
         author = current_user.username
-        article = Article(title=title, description=description, author=author, price=price)
+        article = Article(title=title, description=description, author=author)
         db.session.add(article)
         db.session.commit()
         return redirect("/posts")
@@ -133,8 +132,8 @@ def posts():
 @app.route("/posts/<int:id>")
 @login_required
 def post_detail(id):
-    article = Article.query.get(id)
-    return render_template("post_detail.html", article=article)
+    post = Article.query.get(id)
+    return render_template("post_detail.html", post=post)
 
 
 @app.route("/posts/<int:id>/delete")
