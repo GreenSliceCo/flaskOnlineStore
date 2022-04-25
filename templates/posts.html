@@ -14,7 +14,7 @@ Posts
             <h2>{{post.title}}</h2>
             <p>{{post.description}}</p>
             <p><b>DATE: {{post.date.date()}}</b></p>
-            <p>Author: {{post.author}}</p>
+            <p>Author: <a href="/user/{{post.author}}"> {{post.author}}</a> </p>
         </div>
     </a>
     {% endfor %}
