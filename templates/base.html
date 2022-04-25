@@ -28,8 +28,9 @@
           {% if not current_user.is_authenticated %}
             <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
             <li class="nav-item"><a href="/register" class="nav-link">Register</a></li>
-          {% endif %}
+            {% else %}
           <li class="nav-item"><a href="/users" class="nav-link">Users</a></li>
+            {% endif %}
 
           {% if current_user.is_authenticated %}
             <div class="dropdown text-end">
