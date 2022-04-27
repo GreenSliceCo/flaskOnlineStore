@@ -14,9 +14,6 @@ importlib-metadata==4.11.3
 itsdangerous==2.1.2
 Jinja2==3.1.1
 MarkupSafe==2.1.1
-Panda3D==1.10.11.post1
-panda3d-gltf==0.13
-panda3d-simplepbr==0.10
 Pillow==9.0.1
 pycparser==2.21
 pyobjc-core==8.5
