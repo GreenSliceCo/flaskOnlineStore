@@ -1,6 +1,7 @@
 bcrypt==3.2.0
 cffi==1.15.0
 click==8.1.0
+Cython==0.29.28
 first==2.0.2
 Flask==2.1.0
 Flask-Avatars==0.2.2
@@ -13,10 +14,18 @@ importlib-metadata==4.11.3
 itsdangerous==2.1.2
 Jinja2==3.1.1
 MarkupSafe==2.1.1
+Panda3D==1.10.11.post1
+panda3d-gltf==0.13
+panda3d-simplepbr==0.10
 Pillow==9.0.1
 pycparser==2.21
+pyobjc-core==8.5
+pyobjc-framework-Cocoa==8.5
+pyperclip==1.8.2
+screeninfo==0.8
 six==1.16.0
 SQLAlchemy==1.4.32
+ursina==4.1.1
 Werkzeug==2.0.3
 WTForms==3.0.1
 zipp==3.7.0
