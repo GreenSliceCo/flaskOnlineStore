@@ -1,8 +1,8 @@
 # flaskOnlineStore
-Online blogging system made with python. Commands to reset .db files:
+Online store made with python. Commands to reset .db files:
 ```python
 from app.app import db
-db.reset_all()
-db.reset_all(bind = "userDb")
-db.reset_all(bind = "itemDb")
+db.create_all()
+db.create_all(bind = "userDb")
+db.create_all(bind = "itemDb")
 ```
